@@ -65,8 +65,7 @@ function draw() {
   mango10.display();
   mango11.display();
   mango12.display();
-
-  stoneObj.display();
+  
   groundObject.display();
   launcherObject.display();
 
@@ -92,10 +91,10 @@ function mouseReleased(){
   launcherObject.fly();
 }
 
-
 function keyPressed() {
   if (keyCode === 32) {
     Matter.Body.setPosition(stoneObj.body,{x:235, y:420})
+    launcherObject = new Launcher (stoneObj.body, {x:240, y:420});
     launcherObject.attach(stoneObj.body)
   } 
 }
